@@ -1,0 +1,72 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/*este es para el contenedor*/
+.carrusel-container{
+    position: relative;
+    max-width: 800px;
+    margin: 50px auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+input[type="radio"]{
+    display: none;
+}
+.carrusel-slides{
+    display: flex;
+    width: 500%;
+    transition: transform 0.5s ease-in-out;
+}
+.slide{
+    width: 100%;
+}
+.slide img{
+    width: 100%;
+    display: block;
+    height: auto;
+}
+#slide-1:checked ~ .carrusel-slides{
+    transform: translateX(0%);
+}
+#slide-2:checked ~ .carrusel-slides{
+    transform: translateX(-20%);
+}
+#slide-3:checked ~ .carrusel-slides{
+    transform: translateX(-40%);
+}
+#slide-4:checked ~ .carrusel-slides{
+    transform: translateX(-60%);
+}
+#slide-5:checked ~ .carrusel-slides{
+    transform: translateX(-80%);
+}
+.carrusel-navegacion{
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+.nav-dot{
+    width: 12px;
+    height: 12px;
+    background-color: rgba(226, 10, 10, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.nav-dot{
+    background-color: rgba(126, 26, 26, 0.8);
+}
+#slide-1:checked ~ .carrusel-navegacion .nav-dot:nth-child(1),
+#slide-2:checked ~ .carrusel-navegacion .nav-dot:nth-child(2),
+#slide-3:checked ~ .carrusel-navegacion .nav-dot:nth-child(3),
+#slide-4:checked ~ .carrusel-navegacion .nav-dot:nth-child(4),
+#slide-5:checked ~ .carrusel-navegacion .nav-dot:nth-child(5){
+    background-color: rgb(40, 136, 219);
+    transform: scale(1.2);
+}
